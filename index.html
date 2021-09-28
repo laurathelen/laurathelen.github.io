@@ -22,38 +22,32 @@
  <script src='https://vjs.zencdn.net/7.6.5/video.js'></script>
     
 <script src="https://src.litix.io/videojs/4/videojs-mux.js"></script>
+      <script src='https://vjs.zencdn.net/7.6.5/video.js'></script>
+<script src="https://src.litix.io/videojs/2/videojs-mux.js"></script>
+
+var playerInitTime = Date.now();
+
+  // EITHER initialize Mux Data monitoring like this
+  videojs('my-video', {
+    plugins: {
+      mux: {
+        debug: false,
+        data: {
+          env_key: '0vfntter1pjkljkfq2c2m6s6m', // required
+
+          // Metadata
+          player_name: '', // ex: 'My Main Player'
+          player_init_time: playerInitTime // ex: 1451606400000
+
+          // ... and other metadata
+        }
+      }
+    }
+  });
       <a download="hummer_video.mp4" href="https://stream.mux.com/KJ7oMw3yrrEeqwlbkVKkpqhze2a01EMuXYRP5n4pdGig/low.mp4">Download this amazing hummingbird video!!</a>
  
 
     </center>
-          <script>
-        const playerInitTime = Date.now();
-      
-        // EITHER initialize Mux Data monitoring like this
-        videojs('my-player', {
-          plugins: {
-            mux: {
-              debug: false,
-              data: {
-                env_key: '0vfntter1pjkljkfq2c2m6s6m', // required
-      
-                // Metadata
-                player_name: '', // ex: 'My Main Player'
-                player_init_time: playerInitTime // ex: 1451606400000
-      
-                // ... and other metadata
-              }
-            }
-          }
-        });
-      
-      
-        // OR call the mux function on the player instance
-        // var player = videojs('my-player');
-        // player.mux({
-        //   debug: false,
-        //   data: { ... }
-        // });
-      </script>  
+
     </body>
 </html>
