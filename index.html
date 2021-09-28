@@ -19,16 +19,22 @@
            src='https://stream.mux.com/KJ7oMw3yrrEeqwlbkVKkpqhze2a01EMuXYRP5n4pdGig.m3u8'
            type='application/x-mpegURL'>
         </video>
- <script src='https://vjs.zencdn.net/7.6.5/video.js'></script>
-    
-<script src="https://src.litix.io/videojs/4/videojs-mux.js"></script>
-      <script src='https://vjs.zencdn.net/7.6.5/video.js'></script>
-<script src="https://src.litix.io/videojs/2/videojs-mux.js"></script>
 
-var playerInitTime = Date.now();
+     <script src='https://vjs.zencdn.net/7.6.5/video.js'></script>    
+    <script src="https://src.litix.io/videojs/4/videojs-mux.js"></script>
+<video id="my-player" class="video-js vjs-default-skin"  controls>
+  <!-- 
+      we're using a Mux HLS URL in this example, but the Mux Data integration
+      with HLS.js works with any source that plays with video.js
+  -->
+  <source src="https://stream.mux.com/yb2L3z3Z4IKQH02HYkf9xPToVYkOC85WA.m3u8" type="application/x-mpegURL">
+</video>
+
+<script>
+  const playerInitTime = Date.now();
 
   // EITHER initialize Mux Data monitoring like this
-  videojs('my-video', {
+  videojs('my-player', {
     plugins: {
       mux: {
         debug: false,
@@ -44,6 +50,16 @@ var playerInitTime = Date.now();
       }
     }
   });
+
+
+  // OR call the mux function on the player instance
+  // var player = videojs('my-player');
+  // player.mux({
+  //   debug: false,
+  //   data: { ... }
+  // });
+</script>
+
       <a download="hummer_video.mp4" href="https://stream.mux.com/KJ7oMw3yrrEeqwlbkVKkpqhze2a01EMuXYRP5n4pdGig/low.mp4">Download this amazing hummingbird video!!</a>
  
 
