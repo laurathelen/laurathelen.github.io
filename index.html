@@ -23,18 +23,28 @@
   <body>
     <center>
     <h1>Hummingbirds are cool</h1>
-    <video id='my-video' class='video-js' controls preload='auto' width='300' height='300' data-setup='{}'>
-      
-        <source
-           src='https://stream.mux.com/KJ7oMw3yrrEeqwlbkVKkpqhze2a01EMuXYRP5n4pdGig.m3u8'
-           type='application/x-mpegURL'>
-        </video>
-      
-<script>
+      <video id="my-video" class="video-js" controls preload="auto"
+        width="264"
+        height="264"
+        data-setup="{}"
+      >
+        <source src="https://stream.mux.com/KJ7oMw3yrrEeqwlbkVKkpqhze2a01EMuXYRP5n4pdGig.m3u8" />
+ <!--       <source src="MY_VIDEO.webm" type="video/webm" /> -->
+        <p class="vjs-no-js">
+          To view this video please enable JavaScript, and consider upgrading to a
+         web browser that
+          <a href="https://videojs.com/html5-video-support/" target="_blank"
+          >supports HTML5 video</a>
+        </p>
+      </video>
+    </center>
+    
+
+    <script>
   const playerInitTime = Date.now();
 
-  // EITHER initialize Mux Data monitoring like this
-  videojs('my-player', {
+  // Initialize Mux Data monitoring 
+  videojs('my-video', {
     plugins: {
       mux: {
         debug: false,
@@ -42,7 +52,7 @@
           env_key: '0vfntter1pjkljkfq2c2m6s6m', // required
 
           // Metadata
-          player_name: '', // ex: 'My Main Player'
+          player_name: 'Video.js', // ex: 'My Main Player'
           player_init_time: playerInitTime // ex: 1451606400000
 
           // ... and other metadata
@@ -51,14 +61,8 @@
     }
   });
 
-
-  // OR call the mux function on the player instance
-  // var player = videojs('my-player');
-  // player.mux({
-  //   debug: false,
-  //   data: { ... }
-  // });
-</script>
+</script>  
+    
 
       <a download="hummer_video.mp4" href="https://stream.mux.com/KJ7oMw3yrrEeqwlbkVKkpqhze2a01EMuXYRP5n4pdGig/low.mp4">Download this amazing hummingbird video!!</a>
  
